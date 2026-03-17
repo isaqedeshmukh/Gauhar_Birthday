@@ -1,0 +1,188 @@
+:root {
+  --pink: #ff4d88;
+  --deep: #7a003c;
+  --bg1: #2b0a1a;
+  --bg2: #430d24;
+  --gold: #ffd166;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui, -apple-system, sans-serif;
+  color: #fff;
+  background: radial-gradient(circle at top, var(--bg2), var(--bg1));
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: twinkle 5s linear infinite;
+}
+
+@keyframes twinkle {
+  50% { opacity: 0.7; }
+}
+
+.card {
+  max-width: 980px;
+  margin: 2rem auto;
+  padding: 1.2rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin-bottom: 0.25rem;
+}
+.from {
+  text-align: center;
+  color: #ffd7e7;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.gallery {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  padding: 0.8rem;
+  backdrop-filter: blur(8px);
+}
+
+#hero {
+  width: 100%;
+  max-height: 540px;
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+  border: 3px solid rgba(255, 255, 255, 0.35);
+}
+
+.thumbs {
+  margin-top: 0.7rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 0.5rem;
+}
+
+.thumbs img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.2s ease;
+}
+
+.thumbs img:hover {
+  transform: scale(1.04);
+  border-color: var(--gold);
+}
+
+.cake-wrap {
+  text-align: center;
+  margin-top: 1.6rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 1rem;
+}
+
+.cake {
+  position: relative;
+  width: 260px;
+  margin: 1rem auto 0.6rem;
+}
+
+.layer {
+  height: 110px;
+  background: linear-gradient(#ff93b8, #ff6fa0);
+  border-radius: 14px;
+  box-shadow: inset 0 -8px 0 rgba(255, 255, 255, 0.25);
+}
+
+.icing {
+  height: 25px;
+  width: 100%;
+  background: #fff0f6;
+  border-radius: 12px 12px 8px 8px;
+  margin-bottom: -4px;
+}
+
+.candles {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 4px;
+}
+
+.candle {
+  width: 14px;
+  height: 42px;
+  background: repeating-linear-gradient(45deg, #fff, #fff 4px, #ff8cc0 4px, #ff8cc0 8px);
+  border-radius: 6px;
+  position: relative;
+}
+
+.flame {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  width: 14px;
+  height: 20px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle at 40% 30%, #fff9c4, #ffca28 50%, #ff9800 70%);
+  border-radius: 60% 60% 50% 50%;
+  animation: flicker 0.18s infinite alternate;
+  box-shadow: 0 0 16px rgba(255, 179, 0, 0.95);
+}
+
+.flame.out {
+  animation: none;
+  opacity: 0;
+  transform: translateX(-50%) translateY(8px) scale(0.2);
+  transition: 0.35s ease;
+}
+
+@keyframes flicker {
+  from { transform: translateX(-50%) scale(1) rotate(-1deg); }
+  to { transform: translateX(-50%) scale(1.08) rotate(2deg); }
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.7rem 1rem;
+  background: linear-gradient(90deg, #ff6a9a, #ff3f85);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.message {
+  min-height: 1.2rem;
+  color: #ffe0eb;
+  white-space: pre-line;
+}
+
+.note {
+  margin-top: 1rem;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+  padding: 1rem;
+  line-height: 1.6;
+}
