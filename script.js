@@ -21,7 +21,7 @@ function blowCandles() {
   flames.forEach((f, i) => {
     setTimeout(() => f.classList.add('out'), i * 90);
   });
-  message.textContent = '"Tum meri mohabbat hi nahi, meri zimmedaari bhi ho.Happy Birthday meri hone wali biwi ❤️ Allah humare rishte ko nikah tak aur uske baad bhi barkat de — Ameen."💞';
+  message.textContent = 'Tum meri mohabbat hi nahi, meri zimmedaari bhi ho.Happy Birthday meri hone wali biwi ❤️ Allah humare rishte ko nikah tak aur uske baad bhi barkat de — Ameen.💞';
 }
 
 function relightCandles() {
